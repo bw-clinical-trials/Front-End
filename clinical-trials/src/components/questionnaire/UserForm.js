@@ -6,7 +6,7 @@ import FormUserConditionTwo from './FormUserConditionTwo';
 
 const UserForm = () => {
     const [step, setStep] = useState(1);
-    const [userDetails, setUserDetails] = useState({distance: "", age: 0})
+    const [userDetails, setUserDetails] = useState({})
 
     // Proceed to next step in form.
 
@@ -21,6 +21,8 @@ const UserForm = () => {
     }
 
     const handleChange = (event) => {
+        // console.log(event.target.name, event.taret.value)
+        console.log(event)
         setUserDetails({...userDetails, [event.target.name]: event.target.value})
     }
 
@@ -43,6 +45,7 @@ const UserForm = () => {
             <FormUserAge
             nextStep={nextStep}
             prevStep={prevStep}
+            handleChange={handleChange}
             />
         );
 
@@ -50,6 +53,7 @@ const UserForm = () => {
             <FormUserConditionOne 
             nextStep={nextStep}
             prevStep={prevStep}
+            handleChange={handleChange}
             />
         );
 
@@ -57,6 +61,7 @@ const UserForm = () => {
             <FormUserConditionTwo 
             handleChange={handleChange}
             prevStep={prevStep}
+            handleChange={handleChange}
             />
         );
     }

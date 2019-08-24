@@ -9,30 +9,42 @@ const FormTravelDistance = (props) => {
                     <fieldset>
                         <Form.Group>
                         <label>How Far Are You Willing To Travel?</label>
-                            <Form.Radio
+                            <input
+                                type="radio"
                                 label='25 Miles'
                                 value='25'
                                 name="distance"
-                                // checked={value === 'sm'}
+                                onClick={(event) => {
+                                    props.handleChange(event) }}
                             />
-                            <Form.Radio
+                            <label>25 Miles</label>
+                            <input
+                                type="radio"
                                 label='50 Miles'
                                 value='50'
                                 name="distance"
-                                // checked={value === 'md'}
+                                onClick={(event) => {
+                                    props.handleChange(event) }}
                             />
-                            <Form.Radio
+                            <label>50 Miles</label>
+                            <input
+                                type="radio"
                                 label='75 Miles'
                                 value='75'
                                 name="distance"
-                                // checked={value === 'lg'}
+                                onClick={(event) => {
+                                    props.handleChange(event) }}
                             />
-                            <Form.Radio
+                            <label>75 Miles</label>
+                            <input
+                                type="radio"
                                 label='100 Miles'
                                 value='100'
                                 name="distance"
-                                // checked={value === 'lg'}
+                                onClick={(event) => {
+                                    props.handleChange(event) }}
                             />
+                            <label>100 Miles</label>
                         </Form.Group>
                         <Form.Button onClick={() => props.nextStep()}>Next</Form.Button>
                     </fieldset>

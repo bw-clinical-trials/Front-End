@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import '../setupProxy.js';
 
-const ClinicalTrialData = () => {
+const ClinicalTrialData = (props) => {
     const [trialData, setTrialData] = useState([]);
 
     const proxy = "https://cors-anywhere.herokuapp.com/";

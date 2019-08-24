@@ -6,7 +6,9 @@ const FormUserAge = (props) => {
     return (
         <div>
             <label>How Old Are You?</label>
-            <Input />
+            <Input
+                name="age" 
+                onChange={(event) => props.handleChange(event)}/>
             <Button onClick={() => props.nextStep()}>Next</Button>
             <Button onClick={() => props.prevStep()}>Previous</Button>
         </div>

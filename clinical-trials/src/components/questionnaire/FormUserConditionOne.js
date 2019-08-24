@@ -6,10 +6,26 @@ const FormUserConditionOne = (props) => {
         <div>
             <h1>Do you currently have Exclusionary Condition One?</h1>
             <Button.Group>
-                <Button>Yes</Button><br />
-                <Button>No</Button><br />
-                <Button>I Don't Know</Button><br />
-                <Button>Skip</Button><br />
+                <Button
+                    name="conditionOne"
+                    value="yes"
+                    onClick={(event) => props.handleChange(event)}
+                    >Yes</Button>
+                <Button
+                    name="conditionOne"
+                    value="no"
+                    onClick={(event) => props.handleChange(event)}
+                    >No</Button>
+                <Button
+                    name="conditionOne"
+                    value="idk"
+                    onClick={(event) => props.handleChange(event)}
+                    >I Don't Know</Button>
+                <Button
+                    name="conditionOne"
+                    value="skip"
+                    onClick={(event) => props.handleChange(event)}
+                    >Skip</Button>
                 <Button onClick={() => props.nextStep()}>Next</Button>
                 <Button onClick={() => props.prevStep()}>Previous</Button>
             </Button.Group>

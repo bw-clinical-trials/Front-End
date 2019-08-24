@@ -6,12 +6,28 @@ const FormUserConditionTwo = (props) => {
         <div>
             <h1>Do you currently have Exclusionary Condition Two?</h1>
             <Button.Group>
-                <Button>Yes</Button><br />
-                <Button>No</Button><br />
-                <Button>I Don't Know</Button><br />
-                <Button>Skip</Button><br />
-                <Button onClick={() => props.handleChange()}>Previous</Button>
-                <Button onClick={() => props.prevStep()}>Submit</Button>
+                <Button
+                    name="conditionTwo"
+                    value="yes"
+                    onClick={(event) => props.handleChange(event)}
+                    >Yes</Button>
+                <Button
+                    name="conditionTwo"
+                    value="no"
+                    onClick={(event) => props.handleChange(event)}
+                    >No</Button>
+                <Button
+                    name="conditionTwo"
+                    value="idk"
+                    onClick={(event) => props.handleChange(event)}
+                    >I Don't Know</Button>
+                <Button
+                    name="conditionTwo"
+                    value="skip"
+                    onClick={(event) => props.handleChange(event)}
+                    >Skip</Button>
+                <Button onClick={() => props.nextStep()}>Next</Button>
+                <Button>Submit</Button>
             </Button.Group>
         </div>
     )
