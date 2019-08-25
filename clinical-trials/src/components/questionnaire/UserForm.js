@@ -3,6 +3,7 @@ import FormTravelDistance from './FormTravelDistance';
 import FormUserAge from './FormUserAge.js';
 import FormUserConditionOne from './FormUserConditionOne';
 import FormUserConditionTwo from './FormUserConditionTwo';
+import TrialData from '../TrialData.js';
 
 const UserForm = () => {
     const [step, setStep] = useState(1);
@@ -21,8 +22,7 @@ const UserForm = () => {
     }
 
     const handleChange = (event) => {
-        // console.log(event.target.name, event.taret.value)
-        console.log(event)
+        // console.log(event);
         setUserDetails({...userDetails, [event.target.name]: event.target.value})
     }
 
@@ -59,11 +59,18 @@ const UserForm = () => {
 
         case 4: return(
             <FormUserConditionTwo 
-            handleChange={handleChange}
+            nextStep={nextStep}
             prevStep={prevStep}
             handleChange={handleChange}
             />
         );
+
+        case 5: return(
+            <TrialData userDetails={userDetails} />
+        )
+
+        default:
+            return null;
     }
             
 }
