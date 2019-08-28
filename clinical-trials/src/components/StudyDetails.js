@@ -4,6 +4,8 @@ const StudyDetails = (props) => {
     console.log(props);
     return (
         <div>
+            <button>Back to Study Results</button>
+            
             <h1>{props.activeStudy.IdentificationModule.OfficialTitle}</h1>
             <p>ClinicalTrials.gov - {props.activeStudy.IdentificationModule.NCTId}</p>
 

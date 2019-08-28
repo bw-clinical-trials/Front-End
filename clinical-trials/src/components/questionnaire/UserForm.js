@@ -28,11 +28,6 @@ const UserForm = (props) => {
 
     console.log(userDetails);
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     setUserDetails
-    // }
-
     // Will render the appropriate part of the form depending on the value of step. This allows the user to interact
     // with one part of the form at a time.
     

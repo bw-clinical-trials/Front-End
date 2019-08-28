@@ -8,7 +8,7 @@ const FormUserConditionTwo = (props) => {
                 <input
                     type="text"
                     name="disease"
-                    placeholder="testing"
+                    placeholder="Condition"
                     onChange={(event) => props.handleChange(event)} />
                 <Button onClick={() => props.nextStep()}>Submit</Button>
         </div>

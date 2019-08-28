@@ -2,14 +2,29 @@ import React from 'react'
 import {Form, Container} from 'semantic-ui-react';
 import styled from 'styled-components';
 
+const TravelMainContent = styled.section`
+display: flex;
+`;
+
+const TravelRadiusPrompt = styled.form`
+display:flex;
+flex-direction: column;
+height: 50vh;
+margin-left: 7%;
+margin-right: 5%;
+`;
+
+const TravelRadiusText = styled.p`
+padding-bottom: 10%;
+font-size: 2.5em;
+`;
+
 const FormTravelDistance = (props) => {
     return (
         <div>
-            <Container >
-                <Form>
-                    <fieldset>
-                        <Form.Group>
-                        <label>How Far Are You Willing To Travel?</label>
+            <TravelMainContent>
+                <TravelRadiusPrompt>
+                        <TravelRadiusText>How Far Are You Willing To Travel?</TravelRadiusText>
                             <input
                                 type="radio"
                                 label='25 Miles'
@@ -46,11 +61,9 @@ const FormTravelDistance = (props) => {
                                     props.handleChange(event) }}
                             />
                             <label>100 Miles</label>
-                        </Form.Group>
                         <Form.Button onClick={() => props.nextStep()}>Next</Form.Button>
-                    </fieldset>
-                </Form>
-            </Container>
+                </TravelRadiusPrompt>
+            </TravelMainContent>
         </div>
     )
 }
