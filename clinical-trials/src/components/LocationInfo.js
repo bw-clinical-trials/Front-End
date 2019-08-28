@@ -6,11 +6,9 @@ const LocationInfo = (props) => {
     console.log('In Location Info', props.locationData);
     return(
         <>
-        <div>
-           {props.locationData.map((location) => {
-                return <LocationCard details={location} />
+           {props.locationData.Location.map((cv) => {
+                return <LocationCard details={cv} />
             })}
-        </div>
         </>
     )
 }

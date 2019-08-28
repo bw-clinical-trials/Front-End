@@ -5,7 +5,7 @@ import FormUserConditionOne from './FormUserConditionOne';
 import FormUserConditionTwo from './FormUserConditionTwo';
 import TrialData from '../TrialData.js';
 
-const UserForm = () => {
+const UserForm = (props) => {
     const [step, setStep] = useState(1);
     const [userDetails, setUserDetails] = useState({})
 
@@ -32,6 +32,9 @@ const UserForm = () => {
     //     event.preventDefault();
     //     setUserDetails
     // }
+
+    // Will render the appropriate part of the form depending on the value of step. This allows the user to interact
+    // with one part of the form at a time.
     
     switch (step) {
         case 1: return(
@@ -66,7 +69,7 @@ const UserForm = () => {
         );
 
         case 5: return(
-            <TrialData userDetails={userDetails} />
+            <TrialData setActiveStudy={props.setActiveStudy} userDetails={userDetails} />
         )
 
         default:

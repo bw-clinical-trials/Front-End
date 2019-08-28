@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
+import {NavLink} from 'react-router-dom';
+import logo from '../img/studybookLogo.svg';
 
 const Header = styled.header`
     width: 1368px;
@@ -23,9 +25,9 @@ const NavBar = () => {
     return (
         <div>
             <Header>
-                <img src={"../img/StudybookLogo.png"} />
+                <img src={logo} />
                 <Nav>
-                    <Foo href="#">Find a Trial</Foo>
+                    <NavLink to="/search">Find a Trial</NavLink>
                     <Foo href="#">About</Foo>
                     <Foo href="#">Help</Foo>
                 </Nav>

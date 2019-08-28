@@ -1,8 +1,10 @@
 import React from 'react'
 import {Card, Button} from 'semantic-ui-react';
 import styled from 'styled-components';
+import {withRouter} from 'react-router-dom';
 
 import LocationInfo from './LocationInfo.js';
+import StudyDetails from './StudyDetails.js';
 
 // Styles adapted from UI Devs. Names will vary from what is shown in the HTML for the marketing pages in some instances.
 // Need to make minor adjustments.
@@ -108,17 +110,17 @@ font-size: 1.1rem;
 
 const TrialData = (props) => {
     const title = props.details.Study.ProtocolSection.IdentificationModule.BriefTitle;
-    let locationData = props.details.Study.ProtocolSection;
+    let locationData = props.details.Study.ProtocolSection
 
     // Some of the search results don't have the ContactsLocationModule key.
 
     // if (locationData.hasOwnProperty('ContactsLocationsModule')) {
     //     locationData = props.details.Study.ProtocolSection.ContactsLocationsModule.LocationList.Location;
     // } else {
-    //     locationData.push("No Location Data Available")
+    //     locationData = [{LocationFacility: "No Location Data Available"}];
     // }
 
-    console.log(props.details.Study)
+    // console.log(locationData);
     return(
         <>
             <TrialContainer>
@@ -144,14 +146,16 @@ const TrialData = (props) => {
                         </StatusIcon>
                     </StudyStatus>
                     <StudyButtonContainer>
-                        <StudyButton>View Study</StudyButton>
+                        <StudyButton onClick={ () => {props.setActiveStudy(props.details.Study.ProtocolSection)
+                        props.history.push("/study");
+                    }
+                            // {Set Active Tab and route user to active route}
+                        }>View Study</StudyButton>
                     </StudyButtonContainer>
-                    {/* <Card.Meta>Rank: {props.details.Rank}</Card.Meta> */}
                     {/* <Card.Description><LocationInfo locationData={locationData} /></Card.Description> */}
-                    {/* {(locationData === undefined || locationData.length === 0) ? <Card.Description>"No Location Data Available"</Card.Description> : <Card.Description><LocationInfo locationData={locationData} /></Card.Description> } */}
             </TrialContainer>
         </>
     )
 }
 
-export default TrialData;
+export default withRouter(TrialData);

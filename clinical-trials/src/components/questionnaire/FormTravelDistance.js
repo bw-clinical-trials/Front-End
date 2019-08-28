@@ -1,5 +1,6 @@
 import React from 'react'
 import {Form, Container} from 'semantic-ui-react';
+import styled from 'styled-components';
 
 const FormTravelDistance = (props) => {
     return (

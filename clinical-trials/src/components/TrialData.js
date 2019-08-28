@@ -11,30 +11,22 @@ const ClinicalTrialData = (props) => {
     const url = `https://clinicaltrials.gov/api/query/full_studies?expr=${searchParam}&min_rnk=1&max_rnk=100&fmt=JSON`;
     
     useEffect(() => {
-    // axios.get(proxy + url)
-    //     .then((res) => {
-    //         setTrialData(res.data.FullStudiesResponse.FullStudies)
-    //     })
-    //     .catch((err) => {
-    //         console.log(err)
-    //     })
-        const fetchData = async () => {
-            const result = await axios.get(
-                proxy + url
-            )
-            setTrialData(result.data.FullStudiesResponse.FullStudies)
-        }
-
-        fetchData()
+    axios.get(proxy + url)
+        .then((res) => {
+            setTrialData(res.data.FullStudiesResponse.FullStudies)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [url])
 
-    console.log(trialData);
+    console.log("In Trial Data", trialData);
     return(
         <>
             <div>
                 <h1>Trial Data Search</h1>
                 {(trialData.length === 0 || trialData === undefined) ? "Loading..." : trialData.map((trial) => {
-                    return <TrialCard details={trial} />
+                    return <TrialCard setActiveStudy={props.setActiveStudy} details={trial} />
                 })}
             </div>
         </>
