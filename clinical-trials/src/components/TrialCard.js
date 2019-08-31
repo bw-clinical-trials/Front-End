@@ -147,7 +147,7 @@ const TrialData = (props) => {
                     </StudyStatus>
                     <StudyButtonContainer>
                         <StudyButton onClick={ () => {props.setActiveStudy(props.details.Study.ProtocolSection)
-                        props.history.push("/study");
+                            props.history.push("/study");
                     }
                             // {Set Active Tab and route user to active route}
                         }>View Study</StudyButton>

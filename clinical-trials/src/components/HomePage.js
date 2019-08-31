@@ -32,6 +32,8 @@ display: flex;
 padding: 45px 0px 0px 11px;
 `;
 
+// Styling for background SVG.
+
 const ImgWrapper = styled.div`
 margin-top: -27%;
 margin-bottom: 1.5%;
@@ -89,7 +91,7 @@ const HomePage = () => {
             </MainContent>
             <FindTrialInputs>
                 <ConditionInput type="text" placeholder="Medical Condition"></ConditionInput>
-                <PostalCodeInput></PostalCodeInput>
+                <PostalCodeInput type="text" placeholder="Postal Code"></PostalCodeInput>
                 <FindTrialButton>Find a Trial</FindTrialButton>
             </FindTrialInputs>
             <ImgWrapper>
