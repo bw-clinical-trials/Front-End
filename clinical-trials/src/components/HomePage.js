@@ -4,32 +4,30 @@ import styled from 'styled-components';
 
 const MainContent = styled.section`
 width: 100%;
-padding-left: 5%;
+padding-left: 10%;
 padding-top: 10%;
 `;
 
-// const QuestionPrompt = styled.div`
-
-// `;
-
 const PromptHeader = styled.h1`
-width: 40%;
-// font-family: "gilroylight";
+width: 50%;
+font-family: "gilroylight";
 font-weight: bold;
 font-size: 3.75rem;
-color: @font-color;
 line-height: 1.25em;
-padding-bottom: 2.5%;
+padding-bottom: 1.5%;
+padding-left: 10%;
 `;
 
 const PromptParagraph = styled.p`
 width: 47%;
 padding-bottom: 2.5%;
+font-size: 1.5rem;
+padding-left: 10%;
 `;
 
 const FindTrialInputs = styled.div`
 display: flex;
-padding: 45px 0px 0px 11px;
+padding: 45px 0px 15px 325px;
 `;
 
 // Styling for background SVG.
@@ -37,18 +35,21 @@ padding: 45px 0px 0px 11px;
 const ImgWrapper = styled.div`
 margin-top: -27%;
 margin-bottom: 1.5%;
+z-index: 0
 `;
 
 const ConditionInput = styled.input`
-margin-right: 10px;
-padding: 0px 0px 0px 19px;
+padding: 1px 0px 0px 17px;
+margin: 0px 9px 0px 13px;
 width: 30em;
 height: 42px;
 border-radius: 21px;
 border: 0.05em solid #979797;
 font-size: 15px;
 font-weight: 500;
-font-family: 'gilroylight'
+font-family: "gilroylight";
+letter-spacing: 0px;
+z-index: 1;
 `;
 
 const PostalCodeInput = styled.input`
@@ -62,6 +63,7 @@ line-height: 18px;
 border: 0.05em solid #979797;
 border-radius: 21px;
 padding: 0px 0px 0px 25px;
+z-index: 1;
 `;
 
 const FindTrialButton = styled.button`
@@ -80,6 +82,7 @@ font-size: 16px;
 border-radius: 21px;
 margin: 0px 0px 0px 9px;
 text-transform: uppercase;
+z-index: 1;
 `;
 
 const HomePage = () => {

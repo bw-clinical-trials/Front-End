@@ -48,14 +48,6 @@ const UserForm = (props) => {
         );
 
         case 3: return(
-            <FormUserConditionOne 
-            nextStep={nextStep}
-            prevStep={prevStep}
-            handleChange={handleChange}
-            />
-        );
-
-        case 4: return(
             <FormUserConditionTwo 
             nextStep={nextStep}
             prevStep={prevStep}
@@ -63,9 +55,9 @@ const UserForm = (props) => {
             />
         );
 
-        case 5: return(
+        case 4: return(
             <TrialData setActiveStudy={props.setActiveStudy} userDetails={userDetails} />
-        )
+        );
 
         default:
             return null;

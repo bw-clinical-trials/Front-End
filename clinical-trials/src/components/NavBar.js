@@ -21,12 +21,16 @@ const Foo = styled.a`
     margin: 0px 0px 0px 69px;
 `;
 
+const Img = styled.img`
+    padding-left: 50px;
+`;
+
 const NavBar = () => {
     return (
         <div>
             <Header>
                 <Link to="/">
-                <img src={logo} />
+                <Img src={logo} />
                 </Link>
                 <Nav>
                     <NavLink to="/search">Find a Trial</NavLink>

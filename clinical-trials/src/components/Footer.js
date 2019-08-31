@@ -9,10 +9,12 @@ margin: 0 auto;
 width: 100%;
 padding-top: 10px;
 border-top: 1px solid #dddddd;
+max-height: 150px;
 `;
 
 const FooterNavBar = styled.nav`
 display: flex;
+justify-content: space-around;
 margin: 36px 515px 0px 0px;
 `;
 

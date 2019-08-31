@@ -1,5 +1,4 @@
 import React from 'react'
-import {Form, Container} from 'semantic-ui-react';
 import styled from 'styled-components';
 
 const TravelMainContent = styled.section`
@@ -28,11 +27,10 @@ cursor: pointer;
 user-select: none;
 padding: 3px 0px 2px 43px;
 margin: 34px 0px 0px 0px;
-/* padding-left: 45px; */
-/* padding-bottom: 30px; */
 font-size: 21px;
 font-weight: 500;
 font-family: 'gilroylight';
+z-index: 1;
 `;
 
 const Circle = styled.span`
@@ -43,11 +41,31 @@ border: .05em solid;
 position: absolute;
 left: 0;
 top: 0;
-border-radius: 50%; 
+border-radius: 50%;
+z-index: 0;
 `;
 
 const RemoveInputStyling = styled.input`
 display: none;
+`;
+
+const NavButton = styled.button`
+background-color: #223547;
+font-family: "gilroylight";
+height: 42px;
+width: 127px;
+border: 0;
+color: white;
+text-align: center;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 21px;
+margin: 0px 0px 0px 9px;
+text-transform: uppercase;
+z-index: 1;
 `;
 
 const FormTravelDistance = (props) => {
@@ -96,9 +114,9 @@ const FormTravelDistance = (props) => {
                                         props.handleChange(event) }}
                                 /><Circle />
                             </RadioContainerTravelRadius>
-                            
-                        <Form.Button onClick={() => props.nextStep()}>Next</Form.Button>
+                            <NavButton onClick={() => props.nextStep()}>Next</NavButton>
                 </TravelRadiusPrompt>
+                
             </TravelMainContent>
         </div>
     )

@@ -11,21 +11,20 @@ import StudyDetails from './StudyDetails.js';
 
 const TrialContainer = styled.div`
 width: 100%;
-height: 123px;
+height: 150px;
 padding: 22px 0px;
 display: flex;
 border-top: #f3f3f3 2px solid;
 `;
 
 const Condition = styled.div`
-flex-basis: 16%;
 display: flex;
 align-items: center;
 font-size: 14px;
 `;
 
 const StudyTitleContainer = styled.div`
-flex-basis: 30%;
+flex-basis: 35%;
 `;
 
 const StudyTitle = styled.h3`
@@ -37,13 +36,13 @@ letter-spacing: 0px;
 `;
 
 const StudyLocation = styled.div`
-flex-basis: 25%;
+flex-basis: 33%;
 display: flex;
 font-weight: 600;
 font-size: 18px;
 `;
 
-const Distance = styled.div`
+const IDWrapper = styled.div`
 display: flex;
 flex-flow: column;
 flex-basis: 44%;
@@ -51,10 +50,13 @@ justify-content: center;
 text-align: center;
 `;
 
-const DistanceText = styled.h1`
-font-size: 2rem;
-padding: 0px 0px 0px 0px;
+const IDHeader = styled.h2`
 font-weight: bold;
+font-size: 1.1rem;
+`;
+
+const IDParagraph = styled.p`
+margin: 0px 0px 0px 0px;
 `;
 
 const LocationDetails = styled.div`
@@ -76,12 +78,17 @@ margin: 0px 0px 0px 0px;
 `;
 
 const StudyStatus = styled.div`
-flex-basis: 9%;
+flex-basis: 18%;
 display: flex;
 flex-flow: column;
 justify-content: center;
 text-align: center;
 align-self: center;
+`;
+
+const StatusHeader = styled.h2`
+font-weight: bold;
+font-size: 1.1rem;
 `;
 
 const StatusIcon = styled.div`
@@ -93,7 +100,7 @@ margin: 1px auto;
 `;
 
 const StudyButtonContainer = styled.div`
-flex-basis: 15%;
+flex-basis: 10%;
 padding-left: 42px;
 display: flex;
 justify-content: center;
@@ -110,40 +117,31 @@ font-size: 1.1rem;
 
 const TrialData = (props) => {
     const title = props.details.Study.ProtocolSection.IdentificationModule.BriefTitle;
-    let locationData = props.details.Study.ProtocolSection
 
-    // Some of the search results don't have the ContactsLocationModule key.
-
-    // if (locationData.hasOwnProperty('ContactsLocationsModule')) {
-    //     locationData = props.details.Study.ProtocolSection.ContactsLocationsModule.LocationList.Location;
-    // } else {
-    //     locationData = [{LocationFacility: "No Location Data Available"}];
-    // }
-
-    // console.log(locationData);
     return(
         <>
             <TrialContainer>
                     <StudyTitleContainer>
-                        <Condition>Condition</Condition>
                         <StudyTitle>
                             {title}
                         </StudyTitle>
                     </StudyTitleContainer>
                     <StudyLocation>
-                        <Distance>
-                            <DistanceText>5</DistanceText> Miles
-                        </Distance>
+                        <IDWrapper>
+                            <IDHeader>Study ID</IDHeader>
+                            <IDParagraph>{props.details.Study.ProtocolSection.IdentificationModule.NCTId}</IDParagraph>
+                        </IDWrapper>
                         <LocationDetails>
-                            <LocationHeader>Test Research Location</LocationHeader>
-                            <LocationParagraph>Los Angeles, CA</LocationParagraph>
-                            <LocationParagraph>United States</LocationParagraph>
+                            <LocationHeader>Type of Study:</LocationHeader>
+                            <LocationParagraph>{props.details.Study.ProtocolSection.DesignModule.StudyType}</LocationParagraph>
                         </LocationDetails>
                     </StudyLocation>
                     <StudyStatus>
-                        <StatusIcon>
-                            <p>Recruiting</p>
-                        </StatusIcon>
+                        <StatusHeader>
+                            Trial Status
+                        </StatusHeader>
+                        <StatusIcon />
+                        <p>{props.details.Study.ProtocolSection.StatusModule.OverallStatus}</p>
                     </StudyStatus>
                     <StudyButtonContainer>
                         <StudyButton onClick={ () => {props.setActiveStudy(props.details.Study.ProtocolSection)
@@ -152,7 +150,6 @@ const TrialData = (props) => {
                             // {Set Active Tab and route user to active route}
                         }>View Study</StudyButton>
                     </StudyButtonContainer>
-                    {/* <Card.Description><LocationInfo locationData={locationData} /></Card.Description> */}
             </TrialContainer>
         </>
     )
